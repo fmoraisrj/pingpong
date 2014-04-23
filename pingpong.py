@@ -14,8 +14,13 @@ def pingpong(how_much):
     text=""
 
     for x in range(1, how_much):
-        text += str(x) + " "
-        text += ping(x) + " "
-        text += pong(x) + "\n"
+        is_ping = ping(x)
+        is_pong = pong(x)
 
+        ans = "%s" % (str(x))
+
+        if is_ping or is_pong:
+            ans = "%s %s" % (is_ping, is_pong)
+
+        text += "%s\n" % ans.strip()
     return text

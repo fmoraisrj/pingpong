@@ -64,5 +64,10 @@ class TestPingPong(unittest.TestCase):
         self.assertEqual(ping_length, 5)
         self.assertEqual(pong_length, 3)
 
+    def test_just_ping_without_number(self):
+        ans = pingpong.pingpong(4)
+
+        self.assertEqual(ans, "1\n2\nping\n")
+
     if __name__ == "__main__":
         unittest.main()
